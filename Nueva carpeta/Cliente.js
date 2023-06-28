@@ -4,7 +4,7 @@ class Cliente extends persona {
 
     constructor(nombre, apellido, edad, fechaRegistro) {
         super(nombre, apellido, edad);
-        this._idCliente = ++Cliente.contadorC;
+        this._idCliente = ++Cliente.contadorClientes;
         this._fechaReg = fechaRegistro;
     }
 
@@ -13,15 +13,16 @@ class Cliente extends persona {
     }
 
     get fechaRegistro() {
-        return this._fechaReg;
+        return this._fechaRegistro;
     }
 
-    set fechaRegistro(fecha) {
-        this._fechaReg = fecha;
+    set fechaRegistro(fecharegistro) {
+        this._fechaRegistro = fecharegistro;
     }
 
     toString() {
-        return `${super.toString()} 
+        return `
+        ${super.toString()} 
         ${this._idCliente}
         ${this._fechaRegistro}`;
     }
